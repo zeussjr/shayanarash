@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shayan Arash – Industrial AI &amp; Manufacturing Software Engineer</title>
+<meta name="description" content="Mechanical engineer building AI, optimisation and software systems for real factories. Open to roles in the Netherlands, Finland, Germany, Italy, Austria, Switzerland and Canada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Vazirmatn:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F4F7;--bg2:#E7EBF1;--ink:#0E1828;--mute:#4A5870;--line:#CBD3DF;--acc:#B8561A;--acc-ink:#fff;
+  --c1:#5B6B85;--c2:#3E7C8C;--c3:#4B6FB5;--c4:#6A55B8;--c5:#B8561A;
+  --f-d:"Archivo","Arial Narrow",Arial,sans-serif;--f-b:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--f-m:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#09111F;--bg2:#101B2E;--ink:#E8EDF5;--mute:#9AA9C0;--line:#22324B;--acc:#F0925A;--acc-ink:#1A0B02;
+  --c1:#8493AD;--c2:#5FB3C4;--c3:#6F96E0;--c4:#9B87E6;--c5:#F0925A;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#09111F;--bg2:#101B2E;--ink:#E8EDF5;--mute:#9AA9C0;--line:#22324B;--acc:#F0925A;--acc-ink:#1A0B02;
+  --c1:#8493AD;--c2:#5FB3C4;--c3:#6F96E0;--c4:#9B87E6;--c5:#F0925A;color-scheme:dark}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--f-b);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.logo{font:800 20px var(--f-d);font-stretch:75%;letter-spacing:.02em;text-decoration:none}
+nav{display:flex;gap:22px;align-items:center;font-size:15px}
+nav a{text-decoration:none;color:var(--mute)}nav a:hover{color:var(--ink)}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:5px 12px;font:500 13px var(--f-m);cursor:pointer}
+@media(max-width:720px){nav a{display:none}}
+
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:64px 0 48px}
+h1{font:800 clamp(44px,7.2vw,92px)/.94 var(--f-d);font-stretch:68%;letter-spacing:-.01em;margin:0 0 24px}
+h1 span{color:var(--mute)}
+.lede{font-size:19px;max-width:34em;color:var(--ink);margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 20px;border-radius:4px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--ink)}
+.btn.p{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}
+.btn:hover{transform:translateY(-1px)}
+.graph{position:relative;border:1px solid var(--line);background:var(--bg2);border-radius:6px;aspect-ratio:1/1.02;min-height:340px}
+#g{position:absolute;inset:0;width:100%;height:100%}
+.legend{position:absolute;left:0;right:0;bottom:0;display:flex;flex-wrap:wrap;gap:6px;padding:10px;border-top:1px solid var(--line);background:color-mix(in srgb,var(--bg2) 90%,transparent)}
+.legend button{display:flex;align-items:center;gap:6px;background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:4px 10px;font:500 12px var(--f-m);cursor:pointer}
+.legend button i{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.legend button[aria-pressed="true"]{border-color:var(--c);background:color-mix(in srgb,var(--c) 18%,transparent)}
+.graph{aspect-ratio:auto;min-height:470px}.legend button[data-cur="1"]{border-color:var(--c)}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding-top:40px}}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.stats div{padding:22px;border-right:1px solid var(--line)}.stats div:last-child{border:0}
+.stats b{display:block;font:800 40px/1 var(--f-d);font-stretch:70%}
+.stats span{color:var(--mute);font-size:14px}
+@media(max-width:760px){.stats{grid-template-columns:1fr 1fr}.stats div:nth-child(2){border-right:0}.stats div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+section{padding:88px 0 0}
+h2{font:800 clamp(32px,4.6vw,54px)/1 var(--f-d);font-stretch:70%;margin:0 0 14px;max-width:16em}
+.sub{color:var(--mute);max-width:40em;margin:0 0 40px}
+.sys{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{border:1px solid var(--line);border-top:3px solid var(--c);border-radius:4px;padding:26px;background:var(--bg2)}
+.card h3{font:700 24px/1.1 var(--f-d);font-stretch:78%;margin:0 0 6px}
+.tag{font:500 12.5px var(--f-m);color:var(--c);margin-bottom:14px;display:block}
+.card ul{margin:12px 0 0;padding-left:18px;color:var(--mute);font-size:15.5px}
+.card li{margin-bottom:5px}
+.card p{margin:0}
+@media(max-width:760px){.sys{grid-template-columns:1fr}}
+
+.path{border-left:2px solid var(--line);margin-left:6px}
+.step{position:relative;padding:0 0 34px 28px}
+.step::before{content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--acc)}
+.step time{font:500 13px var(--f-m);color:var(--mute)}
+.step h3{font:700 22px/1.2 var(--f-d);font-stretch:80%;margin:2px 0 6px}
+.step p,.step li{color:var(--mute);font-size:16px;margin:0 0 4px}
+.step ul{margin:6px 0 0;padding-left:18px}
+
+.stack{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.stack div{padding:24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 -1px -1px 0}
+.stack h3{font:700 19px var(--f-d);font-stretch:80%;margin:0 0 8px;color:var(--c)}
+.stack p{margin:0;color:var(--mute);font-size:15px}
+@media(max-width:860px){.stack{grid-template-columns:1fr 1fr}}@media(max-width:560px){.stack{grid-template-columns:1fr}}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media(max-width:860px){.two{grid-template-columns:1fr}}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+.chips li{border:1px solid var(--line);padding:8px 16px;border-radius:999px;font-weight:500}
+.edu h3{font:700 20px var(--f-d);font-stretch:80%;margin:0}.edu p{margin:2px 0 18px;color:var(--mute);font-size:15.5px}
+
+.contact{margin-top:88px;background:var(--ink);color:var(--bg);padding:72px 0}
+.contact h2{color:var(--bg)}.contact p{color:color-mix(in srgb,var(--bg) 72%,transparent);max-width:36em}
+.contact .btn{border-color:var(--bg);color:var(--bg)}.contact .btn.p{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}
+footer{padding:24px 0;color:var(--mute);font-size:14px}
+.status{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:5px 14px;font:500 13px var(--f-m);color:var(--mute);margin-bottom:22px}
+.status i{width:8px;height:8px;border-radius:50%;background:#2FA66A;animation:pl 2.2s infinite}
+@keyframes pl{0%{box-shadow:0 0 0 0 rgba(47,166,106,.6)}70%,100%{box-shadow:0 0 0 8px rgba(47,166,106,0)}}
+.cap{position:absolute;left:12px;right:12px;bottom:62px;font-size:13.5px;line-height:1.45;background:color-mix(in srgb,var(--bg) 85%,transparent);border:1px solid var(--line);border-radius:4px;padding:10px 12px;display:none}
+.cap.on{display:block}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.flow div{padding:22px;border-right:1px solid var(--line);background:var(--bg2)}.flow div:last-child{border:0}
+.flow h4{font:700 18px var(--f-d);font-stretch:80%;margin:0 0 10px;color:var(--acc)}
+.flow ul{margin:0;padding-left:16px;color:var(--mute);font-size:14.5px}
+@media(max-width:860px){.flow{grid-template-columns:1fr 1fr}.flow div{border-bottom:1px solid var(--line)}}
+.pr{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.pr div{border-top:2px solid var(--acc);padding-top:14px}
+.pr h3{font:700 20px/1.15 var(--f-d);font-stretch:80%;margin:0 0 6px}.pr p{margin:0;color:var(--mute);font-size:15px}
+@media(max-width:860px){.pr{grid-template-columns:1fr 1fr}}@media(max-width:520px){.pr{grid-template-columns:1fr}}
+.rl{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 28px;padding:0;list-style:none}
+.rl li{border-left:3px solid var(--acc);padding:6px 0 6px 14px;font-weight:500}
+@media(max-width:560px){.rl{grid-template-columns:1fr}}
+.scope{--line:#26323a;--amber:#e3b04b;--steel:#86b4c4;--text:#e9e6df;--muted:#9aa5aa;border:1px solid #26323a;border-radius:6px;background:#141b1e;color:var(--text);overflow:hidden}
+.scope canvas{display:block;width:100%;height:170px}
+.scope .bar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 18px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.scope output{color:var(--amber);font-variant-numeric:tabular-nums}
+.slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}.slides::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:start;margin:0}
+.ctrl{display:flex;align-items:center;justify-content:center;gap:16px;padding:8px;border-top:1px solid var(--line)}
+.ctrl button{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--text);font-size:20px;line-height:1;cursor:pointer}.ctrl button:hover{border-color:var(--steel);color:var(--steel)}
+.dots i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--line);margin:0 4px;transition:background .2s}.dots i.on{background:var(--amber)}
+.chip{font:500 13px var(--sans);color:var(--text);background:none;border:1px solid var(--line);border-radius:999px;padding:2px 12px;cursor:pointer;margin-right:6px}.chip:hover{border-color:var(--steel);color:var(--steel)}
+#lang{background:var(--bg);border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:5px 8px;font:500 13px var(--f-m)}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:190px;gap:14px}
+.tile{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:4px;padding:0;cursor:pointer;color:var(--ink);text-align:start;background:linear-gradient(160deg,color-mix(in srgb,var(--c) 22%,var(--bg2)),var(--bg2))}
+.tile::before,.ph::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 31px,color-mix(in srgb,var(--c,var(--c3)) 22%,transparent) 31px 32px),repeating-linear-gradient(90deg,transparent 0 31px,color-mix(in srgb,var(--c,var(--c3)) 22%,transparent) 31px 32px)}
+.tile:first-child{grid-column:span 2;grid-row:span 2}.tile:hover{border-color:var(--c)}
+.tile img,.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tile .cp{position:absolute;inset:auto 0 0 0;padding:28px 16px 14px;font:700 18px var(--f-d);font-stretch:80%;background:linear-gradient(transparent,color-mix(in srgb,var(--bg) 88%,transparent))}
+.ph{position:relative;aspect-ratio:16/10;border:1px solid var(--line);background:linear-gradient(160deg,color-mix(in srgb,var(--c,var(--c3)) 22%,var(--bg2)),var(--bg2));overflow:hidden}
+.f3{position:relative;border:1px solid #26323a;border-radius:6px;background:radial-gradient(120% 90% at 50% 0%,#14213a,#0B1424);overflow:hidden;color:#E8EDF5}
+#f3c{height:min(560px,72vh);cursor:grab;touch-action:pan-y}#f3c canvas{display:block;width:100%;height:100%}
+.f3cap{position:absolute;left:12px;right:12px;top:12px;font-size:14px;background:rgba(11,20,36,.8);border:1px solid #26323a;border-radius:4px;padding:8px 12px;pointer-events:none}
+.f3bar{display:flex;flex-wrap:wrap;gap:6px;padding:10px;border-top:1px solid #26323a}
+.f3bar button{background:none;border:1px solid #2c3d5a;color:#E8EDF5;border-radius:999px;padding:5px 12px;font:500 13px var(--f-b);cursor:pointer}
+.f3bar button[aria-pressed=true]{border-color:#F0925A;background:rgba(240,146,90,.16)}
+.lb{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;gap:12px;padding:calc(env(safe-area-inset-top,0px) + 20px) 16px calc(env(safe-area-inset-bottom,0px) + 20px);background:rgba(5,10,18,.92)}
+.lb[hidden]{display:none}.lb figure{margin:0;width:min(920px,100%)}.lb figcaption{color:#E8EDF5;padding-top:12px;font:600 18px var(--f-b)}
+.lbb,.lbx{background:none;border:1px solid #3a4a63;color:#E8EDF5;width:40px;height:40px;border-radius:50%;font-size:22px;cursor:pointer;flex:none}
+.lbx{position:absolute;top:calc(env(safe-area-inset-top,0px) + 12px);right:12px}
+.lb figure{flex:1;min-width:0;max-width:920px}.logo{white-space:nowrap}
+@media(max-width:760px){.gal{grid-template-columns:1fr 1fr;grid-auto-rows:150px}.lbb{position:absolute;bottom:calc(env(safe-area-inset-bottom,0px) + 24px)}#lbp{left:20px}#lbn{right:20px}.logo{font-size:17px}}
+:root:lang(fa){--f-d:"Vazirmatn",Tahoma,sans-serif;--f-b:"Vazirmatn",Tahoma,sans-serif;--f-m:"Vazirmatn",Tahoma,sans-serif}
+:lang(fa) h1{font-size:clamp(32px,4.6vw,60px);line-height:1.35}:lang(fa) h2{font-size:clamp(28px,3.8vw,44px)}:lang(fa) .hero{align-items:start}:lang(fa) .stats b,:lang(fa) .logo{font-stretch:100%}
+:lang(fa) *{letter-spacing:0!important}:lang(fa) h1{line-height:1.25}:lang(fa) h2{line-height:1.3}
+[dir=rtl] .path{border-left:0;border-right:2px solid var(--line);margin-left:0;margin-right:6px}
+[dir=rtl] .step{padding:0 28px 34px 0}[dir=rtl] .step::before{left:auto;right:-7px}
+[dir=rtl] .rl li{border-left:0;border-right:3px solid var(--acc);padding:6px 14px 6px 0}
+[dir=rtl] .card ul,[dir=rtl] .step ul,[dir=rtl] .flow ul{padding-left:0;padding-right:18px}
+[dir=rtl] .flow div,[dir=rtl] .stats div{border-right:0;border-left:1px solid var(--line)}[dir=rtl] .flow div:last-child,[dir=rtl] .stats div:last-child{border:0}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}.status i{animation:none}}
+@media print{header,.graph,.noprint,.contact .cta{display:none!important}body{font-size:12px}section{padding-top:28px}.contact{background:none;color:#000;padding:20px 0}.contact h2,.contact p{color:#000}.card,.step,.stack div,.flow div{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#top">SHAYAN ARASH</a>
+  <nav><a href="#systems">Systems</a><a href="#path">Path</a><a href="#stack">Stack</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a><select id="lang" aria-label="Language"></select><button id="theme" type="button" aria-label="Toggle light and dark theme">theme</button></nav>
+</div></header>
+
+<main id="top">
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <div class="status"><i></i>Open to Industrial AI roles across Europe and Canada</div>
+      <h1>I build AI for the factory floor. <span>I’ve also run one.</span></h1>
+      <p class="lede">Mechanical engineer turned industrial software and AI engineer. I move from the CNC machine to the optimisation model to the production dashboard, so the systems I build survive contact with real operations.</p>
+      <div class="cta"><a class="btn p" href="#contact">Start a conversation</a><a class="btn" href="#systems">See the systems</a><button class="btn noprint" type="button" onclick="window.print()" style="background:none;color:inherit;cursor:pointer;font-family:inherit">Save as PDF</button></div>
+    </div>
+    <div class="graph" aria-label="Animated diagram: a part moves along a production line, its data rises to AI models, and decisions return to the machine">
+      <canvas id="g"></canvas>
+      <div class="cap" id="cap" aria-live="polite"></div><div class="legend" id="legend"></div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div><b>1 : 3</b><span>operator to CNC machine ratio, up from roughly 1 : 1</span></div>
+    <div><b>30 yrs</b><span>family mould-making and injection-moulding business, now led by me</span></div>
+    <div><b>5</b><span>disciplines joined in one system: mechanics, manufacturing, maths, software, AI</span></div>
+    <div><b>7</b><span>target countries, open to relocation</span></div>
+  </div>
+</div>
+
+<section id="factory"><div class="wrap">
+  <h2>The factory, in 3D</h2>
+  <p class="sub">Drag to rotate. Pick a station to fly the camera there.</p>
+  <div class="f3"><div id="f3c"></div><div class="f3cap" id="fcap" aria-live="polite"></div><div class="f3bar" id="f3bar"></div></div>
+</div></section>
+
+<section id="motion"><div class="wrap">
+  <h2>The process, in motion</h2>
+  <p class="sub">Seven short illustrations of the work behind the résumé, from wire inspection to G-code. They are simplified schematics, and the forecast uses synthetic data.</p>
+<div class="scope" aria-roledescription="carousel" aria-label="Live process illustrations">
+<div class="slides" id="slides" tabindex="0">
+<figure class="slide" aria-label="1 of 7: wire inspection"><canvas id="wire" role="img" aria-label="Animated illustration: a wire moves through an inspection window and dark spots are flagged with timestamps."></canvas>
+<div class="bar"><span>Wire inspection: moving wire, inspection window, candidate defects</span><span>Last flag: <output id="log">none yet</output></span></div></figure>
+<figure class="slide" aria-label="2 of 7: injection molding"><canvas id="mold" role="img" aria-label="Animated illustration of the plastic injection molding cycle: feeding, melting, injecting, cooling, opening and ejecting, with the finished part inspected."></canvas>
+<div class="bar"><span>Injection molding cycle with part inspection</span><span>Stage: <output id="stage">Feeding pellets</output></span></div></figure>
+<figure class="slide" aria-label="3 of 7: AI market forecasting"><canvas id="fc" role="img" aria-label="Animated chart: a model learns from a price history, then forecasts 20 days ahead with a widening uncertainty band. Synthetic data."></canvas>
+<div class="bar"><span>AI forecast demo, synthetic data <button class="chip" id="asset" type="button" aria-label="Switch between gold and Dow Jones demo">Gold</button></span><span>Stage: <output id="fcs">learning</output></span></div></figure>
+<figure class="slide" aria-label="4 of 7: injection mold making"><canvas id="mm" role="img" aria-label="Animated exploded view of an injection mold: plates, core, ejector plate and pins come together into the assembled mold."></canvas>
+<div class="bar"><span>Injection mold: exploded view to assembly</span><span>Part: <output id="mms">Assembled</output></span></div></figure>
+<figure class="slide" aria-label="5 of 7: RoboCup Middle Size League"><canvas id="ms" role="img" aria-label="Animated schematic of a RoboCup Middle Size League robot: camera, computer, battery, omni wheels and kicker highlighted in turn."></canvas>
+<div class="bar"><span>RoboCup MSL robot: subsystems</span><span>Subsystem: <output id="mss">Omnidirectional camera</output></span></div></figure>
+<figure class="slide" aria-label="6 of 7: company operations"><canvas id="mg" role="img" aria-label="Animated schematic of a 30-person manufacturing company: orders flow from planning through tooling, molding, quality and delivery under one management layer."></canvas>
+<div class="bar"><span>Running a 30-person manufacturing company</span><span>Stage: <output id="mgs">Order</output></span></div></figure>
+<figure class="slide" aria-label="7 of 7: CNC software"><canvas id="cn" role="img" aria-label="Animated CNC software preview: G-code lines are highlighted one by one while the tool path is drawn and machine coordinates update."></canvas>
+<div class="bar"><span>CNC software: G-code to toolpath preview</span><span>Status: <output id="cns">line 1 of 12</output></span></div></figure>
+</div>
+<div class="ctrl"><button id="prev" aria-label="Previous illustration">&#8249;</button><span class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></span><button id="next" aria-label="Next illustration">&#8250;</button></div>
+</div>
+</div></section>
+
+<section id="systems"><div class="wrap">
+  <h2>Systems I’m building and have delivered</h2>
+  <p class="sub">Each one starts from a real production constraint. Projects marked in development are running in a live factory context; results are added as they are measured.</p>
+  <div class="sys">
+    <article class="card" style="--c:var(--c3)">
+      <h3>Production planning and project management</h3><span class="tag">Optimisation · Python · CP-SAT · in development</span>
+      <p>Turns project definitions, task dependencies, employee skills and working hours into schedules and task assignments.</p>
+      <ul><li>Constraint-based scheduling and resource allocation with CP-SAT</li><li>Tracks output, raw material weights, completion and delivery</li><li>Notifies the right person when work is done or a product can ship</li></ul>
+    </article>
+    <article class="card" style="--c:var(--c4)">
+      <h3>Visual quality inspection</h3><span class="tag">Computer vision · cold-galvanising line · in development</span>
+      <p>Image and video analysis for a cold-galvanising production line project I lead from mechanics to software.</p>
+      <ul><li>Straightness and geometry deviations</li><li>Coating defects and inconsistencies</li><li>Regions of excessive coating thickness</li></ul>
+    </article>
+    <article class="card" style="--c:var(--c5)">
+      <h3>Industrial workflow assistant</h3><span class="tag">AI agents · APIs · Telegram and Rubika · in development</span>
+      <p>An AI assistant that connects employees, management and operational data through the messaging tools people already use.</p>
+      <ul><li>Task coordination and project status in chat</li><li>Integration with internal systems and databases</li><li>Gives management faster access to operational information</li></ul>
+    </article>
+    <article class="card" style="--c:var(--c2)">
+      <h3>CNC workflow and custom G-code</h3><span class="tag">Manufacturing automation · delivered</span>
+      <p>Custom tools that generate G-code for specialised tool movements, plus a workflow that let one operator supervise three machines.</p>
+      <ul><li>Complex mould and component machining</li><li>Centralised measurement, so quality issues trace faster</li><li>Lower staffing per machine, more consistent process</li></ul>
+    </article>
+  </div>
+  <div class="card" style="--c:var(--c1);margin-top:20px">
+    <h3>Time-series forecasting for financial markets</h3><span class="tag">Machine learning · PyTorch · TensorFlow · team of three · delivered</span>
+    <p>LSTM and GRU models trained on four-hour gold and Dow Jones data to forecast roughly four hours ahead, designed as an indicator inside a client’s trading workflow.</p>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Inside the production planner</h2>
+  <p class="sub">The planning system is designed as four stages, from messy project data to a schedule people can act on.</p>
+  <div class="flow">
+    <div><h4>Inputs</h4><ul><li>Projects and tasks</li><li>Task dependencies</li><li>Employee skills</li><li>Working hours</li></ul></div>
+    <div><h4>Constraints</h4><ul><li>Precedence between tasks</li><li>Skill-to-task matching</li><li>Personnel availability</li><li>Material and resource limits</li></ul></div>
+    <div><h4>Solver</h4><ul><li>CP-SAT constraint model</li><li>Schedule and assignment search</li><li>Python-based implementation</li></ul></div>
+    <div><h4>Outputs</h4><ul><li>Task timing and assignees</li><li>Raw material requirements</li><li>Progress and delivery tracking</li><li>Automated notifications</li></ul></div>
+  </div>
+</div></section>
+
+<section id="path"><div class="wrap two">
+  <div>
+    <h2>From the machine shop to executive management</h2>
+    <p class="sub">The route matters: I learned each layer by doing the work, then built tools for the layer above it.</p>
+    <div class="edu">
+      <h3>B.Sc. Mechanical Engineering</h3><p>Islamic Azad University, Qazvin, 2011–2017</p>
+      <h3>Graduate coursework, Mechanical Engineering</h3><p>Istanbul Technical University, 2018–2020</p>
+    </div>
+  </div>
+  <div class="path">
+    <div class="step"><time>Present</time><h3>Executive Manager and Industrial Automation Engineer, Arash Plast</h3>
+      <ul><li>Run operations and lead software, AI, mechanical design and execution for a manufacturer of moulds and injection-moulded parts</li><li>Lead the cold-galvanising line project end to end</li></ul></div>
+    <div class="step"><time>Earlier</time><h3>Executive Manager, Atia VIP Group, Turkey</h3>
+      <p>Ran day-to-day operations and negotiated commercial agreements with external service providers.</p></div>
+    <div class="step"><time>Progressive roles</time><h3>CNC supervisor, production manager, mould designer, CNC programmer</h3>
+      <p>Designed moulds in SolidWorks, programmed CNC milling and turning, and took on more responsibility for people and equipment alongside my studies.</p></div>
+    <div class="step"><time>University</time><h3>Robotics teams</h3>
+      <p>Mechanical designer on a mid-size soccer robot team for about three and a half years, plus an underwater robot team and a solar UAV team.</p></div>
+  </div>
+</div></section>
+
+<section id="stack"><div class="wrap">
+  <h2>One toolbox across the whole system</h2>
+  <p class="sub">Depth comes from using these on real equipment and real people, not from a list.</p>
+  <div class="stack">
+    <div style="--c:var(--c1)"><h3>Mechanical</h3><p>SolidWorks, mould design, FEA, dynamic simulation, Adams, Flow Simulation, Mould Flow</p></div>
+    <div style="--c:var(--c2)"><h3>Manufacturing</h3><p>CNC milling and turning, CAD/CAM, G-code, custom toolpaths, injection moulding, production supervision</p></div>
+    <div style="--c:var(--c3)"><h3>Optimisation</h3><p>CP-SAT, constraint scheduling, resource allocation, dependency management, workforce planning</p></div>
+    <div style="--c:var(--c4)"><h3>AI and vision</h3><p>Python, PyTorch, TensorFlow, LSTM, GRU, computer vision, time-series forecasting</p></div>
+    <div style="--c:var(--c5)"><h3>Software</h3><p>Python, SQL, REST APIs, web development, workflow automation, AI-assisted development, AI agents</p></div>
+    <div style="--c:var(--c1)"><h3>Leadership</h3><p>Production management, supplier coordination, commercial negotiation, project delivery</p></div>
+  </div>
+</div></section>
+
+<section id="gallery"><div class="wrap">
+  <h2>Gallery</h2>
+  <div class="gal"><button class="tile" type="button" aria-haspopup="dialog" style="--c:var(--c3)"><span class="cp">CNC machining</span></button><button class="tile" type="button" aria-haspopup="dialog" style="--c:var(--c4)"><span class="cp">Mould design</span></button><button class="tile" type="button" aria-haspopup="dialog" style="--c:var(--c5)"><span class="cp">Galvanising line</span></button><button class="tile" type="button" aria-haspopup="dialog" style="--c:var(--c2)"><span class="cp">RoboCup robot</span></button><button class="tile" type="button" aria-haspopup="dialog" style="--c:var(--c3)"><span class="cp">Planner dashboard</span></button><button class="tile" type="button" aria-haspopup="dialog" style="--c:var(--c4)"><span class="cp">Inspection results</span></button></div>
+</div></section>
+
+<section><div class="wrap two">
+  <div>
+    <h2>Where I want to work next</h2>
+    <p class="sub">Industrial AI, manufacturing software and automation teams with strong engineering cultures. Open to relocation; work authorisation is arranged per country.</p>
+    <ul class="chips"><li>Netherlands</li><li>Finland</li><li>Germany</li><li>Italy</li><li>Austria</li><li>Switzerland</li><li>Canada</li></ul>
+  </div>
+  <div>
+    <h2>How I work</h2>
+    <p class="sub" style="margin:0">I look for the underlying constraint before the tool. I use AI to move faster, then test, measure and iterate until the system holds up in production. I want colleagues who challenge my assumptions, because that is how my systems get better.</p>
+  </div>
+</div></section>
+<section><div class="wrap">
+  <h2>Engineering principles</h2>
+  <p class="sub">What I hold myself to when a system moves from prototype to production.</p>
+  <div class="pr">
+    <div><h3>Start from the constraint</h3><p>Find the physical, mathematical and operational limits before choosing a tool.</p></div>
+    <div><h3>Test against reality</h3><p>A working demo is not a result. Systems are measured on the real line.</p></div>
+    <div><h3>Build in stages</h3><p>Validate each component before connecting the whole system.</p></div>
+    <div><h3>Verify AI-written code</h3><p>AI speeds up delivery. Tests, review and architecture decide quality.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap two">
+  <div>
+    <h2>Roles I’m targeting</h2>
+    <ul class="rl"><li>Industrial AI Engineer</li><li>Manufacturing Software Engineer</li><li>Production Planning and Optimisation Engineer</li><li>Manufacturing Automation Engineer</li></ul>
+  </div>
+  <div>
+    <h2>Languages</h2>
+    <ul class="rl"><li>Persian, native</li><li>English, professional working proficiency</li></ul>
+  </div>
+</div></section>
+</main>
+
+<div class="contact" id="contact"><div class="wrap">
+  <h2>Let’s talk about your factory problem</h2>
+  <p>If your team is building AI, optimisation or automation for manufacturing, I’d like to hear what you’re working on.</p>
+  <div class="cta">
+    <a class="btn p" href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a>
+    <a class="btn" href="https://www.linkedin.com/in/YOUR-PROFILE">LinkedIn</a>
+    <a class="btn" href="https://github.com/YOUR-HANDLE">GitHub</a>
+  </div>
+</div></div>
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Gallery"><button class="lbb" id="lbp" aria-label="Previous">‹</button><figure><div class="ph" id="lbimg"></div><figcaption id="lbc"></figcaption></figure><button class="lbb" id="lbn" aria-label="Next">›</button><button class="lbx" id="lbx" aria-label="Close">×</button></div>
+<footer><div class="wrap">© Shayan Arash</div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('theme');
+  btn.onclick=function(){var dark=getComputedStyle(root).colorScheme.indexOf('dark')>-1||matchMedia('(prefers-color-scheme: dark)').matches&&root.dataset.theme!=='light';root.dataset.theme=dark?'light':'dark'};
+  var S=[{n:'Machining',st:'CNC',d:'Cycle data',a:'Workflow logic',cap:'Machining: custom G-code drives the CNC, and the workflow lets one operator supervise three machines.'},
+{n:'Quality',st:'Inspection',d:'Image frames',a:'Vision model',cap:'Quality (in development): cameras check straightness and coating, and the model flags defects before delivery.'},
+{n:'Planning',st:'Moulding',d:'Tasks and skills',a:'CP-SAT planner',cap:'Planning (in development): tasks, skills and materials become a schedule, and the right person is notified.'}];
+var lock=-1,lg=document.getElementById('legend'),capEl=document.getElementById('cap'),lgb=[],curS=-1;
+S.forEach(function(s,i){var b=document.createElement('button');b.type='button';b.setAttribute('aria-pressed','false');b.style.setProperty('--c','var(--c'+[2,3,5][i]+')');b.innerHTML='<i></i>'+s.n;
+  b.onclick=function(){lock=lock===i?-1:i;lgb.forEach(function(x,j){x.setAttribute('aria-pressed',String(lock===j))})};lg.appendChild(b);lgb.push(b)});
+var cv=document.getElementById('g'),ctx=cv.getContext('2d'),W,H,t0=performance.now(),still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function build(){var r=cv.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);W=r.width;H=r.height;cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0);if(still)draw(0)}
+function V(n){return getComputedStyle(root).getPropertyValue(n).trim()}
+function ez(v){v=Math.max(0,Math.min(1,v));return v*v*(3-2*v)}
+function lp(a,b,k){return a+(b-a)*k}
+function lbl(q,x,y,c){var w=ctx.measureText(q).width+10;ctx.fillStyle=V('--bg2');ctx.fillRect(x-w/2,y-12,w,17);ctx.fillStyle=c;ctx.fillText(q,x,y)}
+function draw(now){
+  var t=still?3.6:(now-t0)/1000,u=lock<0?t%18:t%6,si=lock<0?Math.floor(u/6):lock,p=lock<0?u%6:u,ink=V('--ink'),mu=V('--mute'),ln=V('--line'),ac=V('--acc'),bg=V('--bg'),cs=[V('--c2'),V('--c3'),V('--c5')],sc=cs[si],i;
+  if(curS!==si){curS=si;capEl.textContent=tx(S[si].cap);capEl.className='cap on';lgb.forEach(function(b,j){b.dataset.cur=j===si?'1':'0'})}
+  var top=10,gp=8,bh=(H-150-top)/3,yb=function(k){return top+k*bh},yA=yb(0)+bh*.55,yD=yb(1)+bh*.55,fl=yb(2)+bh-gp-8,ty=fl-38,sx=function(k){return W*(.2+.3*k)};
+  ctx.clearRect(0,0,W,H);ctx.textAlign='left';ctx.font='500 10.5px '+FF;
+  ['Intelligence','Data','Physical'].forEach(function(n,k){ctx.globalAlpha=1;ctx.strokeStyle=ln;ctx.lineWidth=1;ctx.strokeRect(8.5,yb(k)+.5,W-17,bh-gp);ctx.fillStyle=mu;ctx.fillText(tx(n),16,yb(k)+14)});
+  ctx.strokeStyle=ln;ctx.setLineDash([6,8]);ctx.lineDashOffset=-t*18;ctx.beginPath();ctx.moveTo(8,fl+3);ctx.lineTo(W-8,fl+3);ctx.stroke();ctx.setLineDash([]);
+  ctx.textAlign='center';ctx.font='500 11px '+FF;
+  for(i=0;i<3;i++){var x=sx(i),on=i===si,al=on?1:.38,run=on&&p>1.2&&p<4.5;ctx.globalAlpha=al;
+    ctx.strokeStyle=on?cs[i]:mu;ctx.setLineDash([3,4]);ctx.beginPath();ctx.moveTo(x,ty);ctx.lineTo(x,yA);ctx.stroke();ctx.setLineDash([]);ctx.lineWidth=1.5;
+    ctx.fillStyle=bg;ctx.strokeStyle=on?ink:mu;
+    if(i===0){ctx.fillRect(x-20,fl-30,40,30);ctx.strokeRect(x-20,fl-30,40,30);ctx.beginPath();ctx.moveTo(x,fl-30);ctx.lineTo(x,fl-14+(run?Math.sin(t*14)*2:0));ctx.stroke()}
+    if(i===1){ctx.beginPath();ctx.moveTo(x-18,fl);ctx.lineTo(x-18,fl-34);ctx.lineTo(x+18,fl-34);ctx.lineTo(x+18,fl);ctx.stroke();ctx.fillStyle=cs[1];ctx.fillRect(x-5,fl-34,10,7);
+      if(run){ctx.globalAlpha=.25;ctx.beginPath();ctx.moveTo(x,fl-27);ctx.lineTo(x-14,fl-1);ctx.lineTo(x+14,fl-1);ctx.fill();ctx.globalAlpha=al}}
+    if(i===2){ctx.fillRect(x-22,fl-26,44,26);ctx.strokeRect(x-22,fl-26,44,26);ctx.beginPath();ctx.moveTo(x-12,fl-38);ctx.lineTo(x+12,fl-38);ctx.lineTo(x+5,fl-26);ctx.lineTo(x-5,fl-26);ctx.closePath();ctx.stroke();
+      ctx.fillStyle=on?cs[2]:mu;ctx.fillRect(x+22+(run?Math.sin(t*6)*2:0),fl-20,5,14)}
+    lbl(S[i].st,x,ty-6,on?ink:mu);
+    ctx.fillStyle=cs[i];ctx.beginPath();ctx.arc(x,yD,5,0,6.3);ctx.fill();lbl(S[i].d,x,yD+19,on?ink:mu);
+    ctx.fillStyle=cs[i];ctx.beginPath();ctx.arc(x,yA,8,0,6.3);ctx.fill();lbl(S[i].a,x,yA+22,on?ink:mu);
+    if(on&&p>3&&p<4.5){ctx.globalAlpha=1-(p-3)/1.5;ctx.strokeStyle=cs[i];ctx.beginPath();ctx.arc(x,yA,8+(p-3)*10,0,6.3);ctx.stroke()}
+    if(on&&p>5.7){ctx.globalAlpha=(6-p)/.3;ctx.strokeStyle=ac;ctx.lineWidth=2;ctx.strokeRect(x-27,ty-3,54,fl-ty+5)}
+    ctx.lineWidth=1.5}
+  ctx.globalAlpha=1;var X=sx(si),px=(lock<0&&si>0?sx(si-1):X-W*.2);px=lp(px,X,ez(p/1.5));
+  var fa=(lock>=0||si===2)?(p>5.7?(6-p)/.3:p<.3?p/.3:1):1;ctx.globalAlpha=fa;ctx.fillStyle=V('--c1');ctx.fillRect(px-11,fl-14,22,14);
+  if(si===1){ctx.fillStyle=bg;ctx.beginPath();ctx.arc(px+3,fl-8,2.5,0,6.3);ctx.fill();if(p>2.4&&p<5.4){ctx.strokeStyle=ac;ctx.lineWidth=2;ctx.strokeRect(px-14,fl-18,28,22)}}
+  ctx.globalAlpha=1;var dot=null;
+  if(p>=1.5&&p<3){var k=(p-1.5)/1.5;dot=[sc,k<.5?lp(ty,yD,k*2):lp(yD,yA,(k-.5)*2)]}
+  if(p>=4.5&&p<5.7){var k2=(p-4.5)/1.2;dot=[ac,k2<.5?lp(yA,yD,k2*2):lp(yD,ty,(k2-.5)*2)]}
+  if(dot){ctx.fillStyle=dot[0];ctx.beginPath();ctx.arc(X,dot[1],4.5,0,6.3);ctx.fill()}
+}
+function frame(now){draw(now);requestAnimationFrame(frame)}
+var FF='IBM Plex Sans,system-ui,sans-serif',LN=['en','fa','nl','de','fr'],lang='en',orig=new WeakMap(),sel=document.getElementById('lang');
+var T={
+"Systems":["سیستم‌ها","Systemen","Systeme","Systèmes"],"Path":["مسیر","Loopbaan","Werdegang","Parcours"],"Stack":["مهارت‌ها","Vaardigheden","Kompetenzen","Compétences"],"Gallery":["گالری","Galerie","Galerie","Galerie"],"Contact":["تماس","Contact","Kontakt","Contact"],
+"Open to Industrial AI roles across Europe and Canada":["آماده‌ی همکاری در نقش‌های هوش مصنوعی صنعتی در اروپا و کانادا","Open voor rollen in industriële AI in Europa en Canada","Offen für Rollen in der industriellen KI in Europa und Kanada","Ouvert aux postes en IA industrielle en Europe et au Canada"],
+"I build AI for the factory floor.":["من هوش مصنوعی را برای کف کارخانه می‌سازم.","Ik bouw AI voor de fabrieksvloer.","Ich baue KI für die Fabrikhalle.","Je construis de l’IA pour l’atelier."],
+"I’ve also run one.":["خودم هم یکی را اداره کرده‌ام.","Ik heb er zelf ook een geleid.","Ich habe auch selbst eine geleitet.","J’en ai aussi dirigé une."],
+"Mechanical engineer turned industrial software and AI engineer. I move from the CNC machine to the optimisation model to the production dashboard, so the systems I build survive contact with real operations.":["مهندس مکانیکی که به مهندس نرم‌افزار و هوش مصنوعی صنعتی تبدیل شده‌ام. از ماشین CNC تا مدل بهینه‌سازی و داشبورد تولید کار می‌کنم، تا سیستم‌هایی که می‌سازم در برخورد با عملیات واقعی دوام بیاورند.","Werktuigbouwkundig ingenieur die is doorgegroeid naar industriële software en AI. Ik werk van de CNC-machine tot het optimalisatiemodel en het productiedashboard, zodat de systemen die ik bouw standhouden in de echte operatie.","Maschinenbauingenieur, der zum Ingenieur für Industriesoftware und KI geworden ist. Ich arbeite von der CNC-Maschine über das Optimierungsmodell bis zum Produktions-Dashboard, damit meine Systeme im realen Betrieb bestehen.","Ingénieur mécanicien devenu ingénieur en logiciels industriels et en IA. Je travaille de la machine CNC au modèle d’optimisation et au tableau de bord de production, afin que mes systèmes tiennent face à la réalité des opérations."],
+"Start a conversation":["شروع گفتگو","Start een gesprek","Gespräch beginnen","Engager la conversation"],"See the systems":["دیدن سیستم‌ها","Bekijk de systemen","Systeme ansehen","Voir les systèmes"],"Save as PDF":["ذخیره به‌صورت PDF","Opslaan als pdf","Als PDF speichern","Enregistrer en PDF"],
+"operator to CNC machine ratio, up from roughly 1 : 1":["نسبت اپراتور به ماشین CNC، در مقایسه با حدود ۱ به ۱ قبلی","operator per CNC-machine, voorheen ongeveer 1 : 1","Verhältnis Bediener zu CNC-Maschinen, zuvor etwa 1 : 1","ratio opérateur/machines CNC, contre environ 1 : 1 auparavant"],
+"family mould-making and injection-moulding business, now led by me":["کسب‌وکار خانوادگی قالب‌سازی و تزریق پلاستیک که اکنون من آن را هدایت می‌کنم","familiebedrijf in matrijzenbouw en spuitgieten, nu onder mijn leiding","Familienunternehmen für Formenbau und Spritzguss, heute unter meiner Leitung","entreprise familiale de moules et d’injection plastique, que je dirige aujourd’hui"],
+"disciplines joined in one system: mechanics, manufacturing, maths, software, AI":["رشته در یک سیستم: مکانیک، تولید، ریاضی، نرم‌افزار، هوش مصنوعی","disciplines in één systeem: mechanica, productie, wiskunde, software, AI","Disziplinen in einem System: Mechanik, Fertigung, Mathematik, Software, KI","disciplines réunies dans un système : mécanique, fabrication, maths, logiciel, IA"],
+"target countries, open to relocation":["کشور هدف، آماده‌ی جابه‌جایی","doellanden, bereid te verhuizen","Zielländer, umzugsbereit","pays visés, prêt à déménager"],
+"The process, in motion":["فرایند، در حرکت","Het proces in beweging","Der Prozess in Bewegung","Le processus en mouvement"],
+"Systems I’m building and have delivered":["سیستم‌هایی که ساخته‌ام و در حال ساخت آن‌ها هستم","Systemen die ik bouw en heb opgeleverd","Systeme, die ich baue und geliefert habe","Systèmes que je construis et que j’ai livrés"],
+"Each one starts from a real production constraint. Projects marked in development are running in a live factory context; results are added as they are measured.":["هر کدام از یک محدودیت واقعی تولید شروع می‌شود. پروژه‌های «در حال توسعه» در بستر واقعی کارخانه اجرا می‌شوند و نتایج با اندازه‌گیری اضافه می‌شود.","Elk begint bij een echte productiebeperking. Projecten die in ontwikkeling zijn, draaien in een echte fabrieksomgeving; resultaten volgen zodra ze gemeten zijn.","Jedes beginnt bei einer realen Produktionsrestriktion. Projekte in Entwicklung laufen im realen Fabrikumfeld; Ergebnisse folgen, sobald sie gemessen sind.","Chacun part d’une contrainte de production réelle. Les projets en développement tournent dans un contexte d’usine réel ; les résultats sont ajoutés au fil des mesures."],
+"Production planning and project management":["برنامه‌ریزی تولید و مدیریت پروژه","Productieplanning en projectmanagement","Produktionsplanung und Projektmanagement","Planification de production et gestion de projet"],
+"Visual quality inspection":["بازرسی کیفیت بصری","Visuele kwaliteitsinspectie","Visuelle Qualitätsprüfung","Contrôle qualité visuel"],
+"Industrial workflow assistant":["دستیار گردش‌کار صنعتی","Assistent voor industriële workflows","Assistent für industrielle Workflows","Assistant de flux de travail industriel"],
+"CNC workflow and custom G-code":["گردش‌کار CNC و G-code سفارشی","CNC-workflow en eigen G-code","CNC-Workflow und eigener G-Code","Flux CNC et G-code sur mesure"],
+"Time-series forecasting for financial markets":["پیش‌بینی سری زمانی برای بازارهای مالی","Tijdreeksvoorspelling voor financiële markten","Zeitreihenprognose für Finanzmärkte","Prévision de séries temporelles pour les marchés financiers"],
+"Inside the production planner":["درون برنامه‌ریز تولید","In de productieplanner","Im Produktionsplaner","Dans le planificateur de production"],
+"Inputs":["ورودی‌ها","Invoer","Eingaben","Entrées"],"Constraints":["محدودیت‌ها","Randvoorwaarden","Randbedingungen","Contraintes"],"Solver":["حل‌کننده","Solver","Solver","Solveur"],"Outputs":["خروجی‌ها","Uitvoer","Ausgaben","Sorties"],
+"From the machine shop to executive management":["از کارگاه ماشین‌کاری تا مدیریت اجرایی","Van de machinewerkplaats naar de directie","Von der Werkstatt in die Geschäftsführung","De l’atelier d’usinage à la direction"],
+"Present":["اکنون","Heden","Heute","Aujourd’hui"],"Earlier":["پیش‌تر","Eerder","Früher","Auparavant"],"Progressive roles":["نقش‌های پیاپی","Opeenvolgende functies","Aufeinanderfolgende Rollen","Rôles successifs"],"University":["دانشگاه","Universiteit","Universität","Université"],
+"Executive Manager and Industrial Automation Engineer, Arash Plast":["مدیر اجرایی و مهندس اتوماسیون صنعتی، آرش پلاست","Algemeen directeur en ingenieur industriële automatisering, Arash Plast","Geschäftsführer und Ingenieur für Industrieautomation, Arash Plast","Directeur exécutif et ingénieur en automatisation industrielle, Arash Plast"],
+"Executive Manager, Atia VIP Group, Turkey":["مدیر اجرایی، گروه آتیا وی‌آی‌پی، ترکیه","Algemeen directeur, Atia VIP Group, Turkije","Geschäftsführer, Atia VIP Group, Türkei","Directeur exécutif, Atia VIP Group, Turquie"],
+"CNC supervisor, production manager, mould designer, CNC programmer":["سرپرست CNC، مدیر تولید، طراح قالب، برنامه‌نویس CNC","CNC-supervisor, productiemanager, matrijsontwerper, CNC-programmeur","CNC-Leiter, Produktionsleiter, Formenkonstrukteur, CNC-Programmierer","Responsable CNC, directeur de production, concepteur de moules, programmeur CNC"],
+"Robotics teams":["تیم‌های رباتیک","Robotica-teams","Robotikteams","Équipes de robotique"],
+"One toolbox across the whole system":["یک جعبه‌ابزار برای کل سیستم","Eén gereedschapskist voor het hele systeem","Ein Werkzeugkasten für das ganze System","Une seule boîte à outils pour tout le système"],
+"Mechanical":["مکانیک","Mechanica","Mechanik","Mécanique"],"Manufacturing":["تولید","Productie","Fertigung","Fabrication"],"Optimisation":["بهینه‌سازی","Optimalisatie","Optimierung","Optimisation"],"AI and vision":["هوش مصنوعی و بینایی","AI en vision","KI und Bildverarbeitung","IA et vision"],"Software":["نرم‌افزار","Software","Software","Logiciel"],"Leadership":["رهبری","Leiderschap","Führung","Leadership"],
+"CNC machining":["ماشین‌کاری CNC","CNC-bewerking","CNC-Bearbeitung","Usinage CNC"],"Mould design":["طراحی قالب","Matrijsontwerp","Formenkonstruktion","Conception de moules"],"Galvanising line":["خط گالوانیزه","Verzinklijn","Verzinkungslinie","Ligne de galvanisation"],"RoboCup robot":["ربات RoboCup","RoboCup-robot","RoboCup-Roboter","Robot RoboCup"],"Planner dashboard":["داشبورد برنامه‌ریز","Planner-dashboard","Planer-Dashboard","Tableau de bord du planificateur"],"Inspection results":["نتایج بازرسی","Inspectieresultaten","Prüfergebnisse","Résultats d’inspection"],
+"Where I want to work next":["کجا می‌خواهم در گام بعد کار کنم","Waar ik hierna wil werken","Wo ich als Nächstes arbeiten möchte","Où je veux travailler ensuite"],
+"Industrial AI, manufacturing software and automation teams with strong engineering cultures. Open to relocation; work authorisation is arranged per country.":["تیم‌های هوش مصنوعی صنعتی، نرم‌افزار تولید و اتوماسیون با فرهنگ مهندسی قوی. آماده‌ی جابه‌جایی؛ مجوز کار برای هر کشور جداگانه ترتیب داده می‌شود.","Teams in industriële AI, productiesoftware en automatisering met een sterke engineeringcultuur. Bereid te verhuizen; de werkvergunning regel ik per land.","Teams für industrielle KI, Fertigungssoftware und Automatisierung mit starker Ingenieurkultur. Umzugsbereit; die Arbeitserlaubnis wird je Land geklärt.","Équipes d’IA industrielle, de logiciels de fabrication et d’automatisation à forte culture d’ingénierie. Prêt à déménager ; l’autorisation de travail est réglée pays par pays."],
+"Netherlands":["هلند","Nederland","Niederlande","Pays-Bas"],"Finland":["فنلاند","Finland","Finnland","Finlande"],"Germany":["آلمان","Duitsland","Deutschland","Allemagne"],"Italy":["ایتالیا","Italië","Italien","Italie"],"Austria":["اتریش","Oostenrijk","Österreich","Autriche"],"Switzerland":["سوئیس","Zwitserland","Schweiz","Suisse"],"Canada":["کانادا","Canada","Kanada","Canada"],
+"How I work":["شیوه‌ی کار من","Hoe ik werk","Wie ich arbeite","Ma façon de travailler"],
+"I look for the underlying constraint before the tool. I use AI to move faster, then test, measure and iterate until the system holds up in production. I want colleagues who challenge my assumptions, because that is how my systems get better.":["پیش از ابزار، دنبال محدودیت اصلی می‌گردم. از هوش مصنوعی برای سریع‌تر شدن استفاده می‌کنم، بعد آزمایش، اندازه‌گیری و تکرار می‌کنم تا سیستم در تولید دوام بیاورد. همکارانی می‌خواهم که فرض‌های مرا به چالش بکشند، چون سیستم‌های من این‌طور بهتر می‌شوند.","Ik zoek eerst de onderliggende beperking en pas daarna het gereedschap. Ik gebruik AI om sneller te werken en test, meet en itereer tot het systeem in productie standhoudt. Ik wil collega’s die mijn aannames uitdagen, want zo worden mijn systemen beter.","Ich suche zuerst die zugrunde liegende Restriktion, dann das Werkzeug. Ich nutze KI, um schneller zu sein, und teste, messe und iteriere, bis das System in der Produktion hält. Ich wünsche mir Kollegen, die meine Annahmen hinterfragen, denn so werden meine Systeme besser.","Je cherche la contrainte sous-jacente avant l’outil. J’utilise l’IA pour aller plus vite, puis je teste, mesure et itère jusqu’à ce que le système tienne en production. Je veux des collègues qui remettent mes hypothèses en question, car c’est ainsi que mes systèmes s’améliorent."],
+"Engineering principles":["اصول مهندسی","Engineeringprincipes","Ingenieursprinzipien","Principes d’ingénierie"],
+"Start from the constraint":["از محدودیت شروع کن","Begin bij de beperking","Von der Restriktion ausgehen","Partir de la contrainte"],"Test against reality":["با واقعیت بسنج","Toets aan de werkelijkheid","An der Realität prüfen","Confronter au réel"],"Build in stages":["مرحله‌ای بساز","Bouw in stappen","In Stufen bauen","Construire par étapes"],"Verify AI-written code":["کد تولیدشده با هوش مصنوعی را راستی‌آزمایی کن","Controleer door AI geschreven code","KI-generierten Code prüfen","Vérifier le code écrit par l’IA"],
+"Languages":["زبان‌ها","Talen","Sprachen","Langues"],"Persian, native":["فارسی، زبان مادری","Perzisch, moedertaal","Persisch, Muttersprache","Persan, langue maternelle"],"English, professional working proficiency":["انگلیسی، سطح کاری حرفه‌ای","Engels, professioneel werkniveau","Englisch, fließend im Beruf","Anglais, niveau professionnel courant"],
+"Let’s talk about your factory problem":["درباره‌ی مسئله‌ی کارخانه‌ی شما حرف بزنیم","Laten we praten over het probleem in uw fabriek","Sprechen wir über Ihr Fabrikproblem","Parlons de votre problème d’usine"],
+"If your team is building AI, optimisation or automation for manufacturing, I’d like to hear what you’re working on.":["اگر تیم شما در حال ساخت هوش مصنوعی، بهینه‌سازی یا اتوماسیون برای تولید است، دوست دارم بشنوم روی چه کاری کار می‌کنید.","Bouwt uw team aan AI, optimalisatie of automatisering voor de maakindustrie? Dan hoor ik graag waar u mee bezig bent.","Wenn Ihr Team KI, Optimierung oder Automatisierung für die Fertigung entwickelt, würde ich gern hören, woran Sie arbeiten.","Si votre équipe développe de l’IA, de l’optimisation ou de l’automatisation pour l’industrie, j’aimerais savoir sur quoi vous travaillez."],
+"Intelligence":["هوش","Intelligentie","Intelligenz","Intelligence"],"Data":["داده","Data","Daten","Données"],"Physical":["فیزیکی","Fysiek","Physisch","Physique"],"Machining":["ماشین‌کاری","Bewerking","Bearbeitung","Usinage"],"Quality":["کیفیت","Kwaliteit","Qualität","Qualité"],"Planning":["برنامه‌ریزی","Planning","Planung","Planification"],
+"Machining: custom G-code drives the CNC, and the workflow lets one operator supervise three machines.":["ماشین‌کاری: G-code سفارشی CNC را هدایت می‌کند و گردش‌کار اجازه می‌دهد یک اپراتور سه ماشین را نظارت کند.","Bewerking: eigen G-code stuurt de CNC aan en dankzij de workflow bewaakt één operator drie machines.","Bearbeitung: eigener G-Code steuert die CNC, und der Workflow erlaubt einem Bediener, drei Maschinen zu überwachen.","Usinage : un G-code sur mesure pilote la CNC, et le flux permet à un seul opérateur de superviser trois machines."],
+"Quality (in development): cameras check straightness and coating, and the model flags defects before delivery.":["کیفیت (در حال توسعه): دوربین‌ها راستی و پوشش را بررسی می‌کنند و مدل پیش از تحویل عیب‌ها را علامت می‌زند.","Kwaliteit (in ontwikkeling): camera’s controleren rechtheid en coating en het model markeert defecten vóór levering.","Qualität (in Entwicklung): Kameras prüfen Geradheit und Beschichtung, und das Modell markiert Fehler vor der Auslieferung.","Qualité (en développement) : des caméras contrôlent la rectitude et le revêtement, et le modèle signale les défauts avant livraison."],
+"Planning (in development): tasks, skills and materials become a schedule, and the right person is notified.":["برنامه‌ریزی (در حال توسعه): وظایف، مهارت‌ها و مواد به یک برنامه تبدیل می‌شوند و فرد درست مطلع می‌شود.","Planning (in ontwikkeling): taken, vaardigheden en materialen worden een planning en de juiste persoon wordt op de hoogte gebracht.","Planung (in Entwicklung): Aufgaben, Qualifikationen und Material werden zu einem Plan, und die richtige Person wird benachrichtigt.","Planification (en développement) : tâches, compétences et matières deviennent un planning, et la bonne personne est prévenue."],"The factory, in 3D":["کارخانه، در سه‌بعد", "De fabriek in 3D", "Die Fabrik in 3D", "L’usine en 3D"],"Drag to rotate. Pick a station to fly the camera there.":["برای چرخاندن بکش. یک ایستگاه را انتخاب کن تا دوربین به آنجا برود.", "Sleep om te draaien. Kies een station om de camera daarheen te sturen.", "Ziehen zum Drehen. Station wählen, um die Kamera dorthin zu fahren.", "Faites glisser pour tourner. Choisissez une station pour y envoyer la caméra."],"Overview":["نمای کلی", "Overzicht", "Überblick", "Vue d’ensemble"],"Injection moulding":["تزریق پلاستیک", "Spuitgieten", "Spritzguss", "Injection plastique"],"Vision inspection":["بازرسی بینایی", "Visuele inspectie", "Bildprüfung", "Inspection par vision"],"AI planner":["برنامه‌ریز هوشمند", "AI-planner", "KI-Planer", "Planificateur IA"],"Team alerts":["اعلان به تیم", "Teammeldingen", "Team-Benachrichtigungen", "Alertes à l’équipe"],"Five stations, one connected system: data flows up, decisions flow back.":["پنج ایستگاه، یک سیستم متصل: داده بالا می‌رود و تصمیم‌ها برمی‌گردند.", "Vijf stations, één verbonden systeem: data stijgt op, beslissingen komen terug.", "Fünf Stationen, ein verbundenes System: Daten steigen auf, Entscheidungen kommen zurück.", "Cinq stations, un seul système connecté : les données montent, les décisions redescendent."],"Custom G-code drives the machine, and one operator supervises three.":["G-code سفارشی ماشین را هدایت می‌کند و یک اپراتور سه ماشین را نظارت می‌کند.", "Eigen G-code stuurt de machine aan en één operator bewaakt er drie.", "Eigener G-Code steuert die Maschine, und ein Bediener überwacht drei.", "Un G-code sur mesure pilote la machine, et un opérateur en supervise trois."],"Mould cycles feed production data into the plan.":["چرخه‌های قالب، داده‌ی تولید را به برنامه می‌رسانند.", "Matrijscycli voeden productiedata in de planning.", "Formzyklen speisen Produktionsdaten in die Planung ein.", "Les cycles de moulage alimentent le plan en données de production."],"Cameras check straightness and coating (in development).":["دوربین‌ها راستی و پوشش را بررسی می‌کنند (در حال توسعه).", "Camera’s controleren rechtheid en coating (in ontwikkeling).", "Kameras prüfen Geradheit und Beschichtung (in Entwicklung).", "Des caméras contrôlent la rectitude et le revêtement (en développement)."],"CP-SAT turns tasks, skills and materials into a schedule (in development).":["CP-SAT وظایف، مهارت‌ها و مواد را به برنامه تبدیل می‌کند (در حال توسعه).", "CP-SAT zet taken, vaardigheden en materialen om in een planning (in ontwikkeling).", "CP-SAT macht aus Aufgaben, Qualifikationen und Material einen Plan (in Entwicklung).", "CP-SAT transforme tâches, compétences et matières en planning (en développement)."],"The right person is notified in Telegram or Rubika when work is done.":["وقتی کار تمام شد، فرد درست در تلگرام یا روبیکا مطلع می‌شود.", "De juiste persoon krijgt een melding in Telegram of Rubika wanneer het werk klaar is.", "Die richtige Person wird in Telegram oder Rubika benachrichtigt, wenn die Arbeit fertig ist.", "La bonne personne est prévenue sur Telegram ou Rubika quand le travail est terminé."]};
+function tx(s){var i=LN.indexOf(lang);return i<1||!T[s]?s:T[s][i-1]}
+window._tx=tx;window._lang=function(){return lang};
+function apply(l){lang=l;var h=document.documentElement,i=LN.indexOf(l),w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT),n,o,k;h.lang=l;h.dir=l==='fa'?'rtl':'ltr';FF=l==='fa'?'Vazirmatn,Tahoma,sans-serif':'IBM Plex Sans,system-ui,sans-serif';
+  while(n=w.nextNode()){if(n.parentNode.closest('script,style,select,#cap,#fcap'))continue;o=orig.get(n);if(o===undefined){if(!T[n.nodeValue.trim()])continue;o=n.nodeValue;orig.set(n,o)}k=o.trim();n.nodeValue=i<1?o:o.replace(k,T[k][i-1])}
+  curS=-1;if(still)draw(0);if(window.f3r)f3r();sel.value=l;try{localStorage.setItem('lang',l)}catch(e){}}
+window._apply=apply;sel.innerHTML=['English','فارسی','Nederlands','Deutsch','Français'].map(function(n,i){return '<option value="'+LN[i]+'">'+n+'</option>'}).join('');
+sel.onchange=function(){apply(sel.value)};
+var tiles=[].slice.call(document.querySelectorAll('.tile')),lb=document.getElementById('lb'),lbi=document.getElementById('lbimg'),lbc=document.getElementById('lbc'),gi=0;
+tiles.forEach(function(t,i){if(t.dataset.src){var im=new Image();im.src=t.dataset.src;im.alt=t.textContent;t.insertBefore(im,t.firstChild)}t.onclick=function(){show(i);lb.hidden=false;document.getElementById('lbx').focus()}});
+function show(i){gi=(i+tiles.length)%tiles.length;var t=tiles[gi];lbi.style.setProperty('--c',t.style.getPropertyValue('--c'));lbi.innerHTML=t.dataset.src?'<img src="'+t.dataset.src+'" alt="">':'';lbc.textContent=t.querySelector('.cp').textContent}
+function closeL(){lb.hidden=true;tiles[gi].focus()}
+document.getElementById('lbx').onclick=closeL;document.getElementById('lbp').onclick=function(){show(gi-1)};document.getElementById('lbn').onclick=function(){show(gi+1)};
+lb.onclick=function(e){if(e.target===lb)closeL()};
+addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')closeL();if(e.key==='ArrowRight')show(gi+(lang==='fa'?-1:1));if(e.key==='ArrowLeft')show(gi+(lang==='fa'?1:-1))});
+build();addEventListener('resize',build);if(!still)requestAnimationFrame(frame);
+var q='en';try{q=localStorage.getItem('lang')||''}catch(e){}if(LN.indexOf(q)<0){q=(navigator.language||'en').slice(0,2);if(LN.indexOf(q)<0)q='en'}apply(q);
+})();
+</script>
+<script>
+function K(v){return Math.max(0,Math.min(1,v))}
+var FONT='11px IBM Plex Sans,system-ui,sans-serif';
+window.mm2=function(x,W,H,t,L){
+var T=t%12,e=T<4?1:T<7?1-K((T-4)/3):T<9?0:K((T-9)/2),u=H/170,bw=W*.36,cx=W*.36,g=10*u*e,i;
+var P=[['Top clamp plate',8,1,'#3a4a53'],['Cavity plate',18,.85,'#3f525c'],['Core plate',18,.85,'#4a6571'],['Support plate',8,.85,'#3a4a53'],['Spacer blocks',16,.85,'#2c3941'],['Bottom clamp plate',8,1,'#3a4a53']];
+var nm=['Top clamp plate','Cavity plate','Core plate','Support plate','Spacer blocks','Bottom clamp plate','Ejector plate and pins'];
+var y=H*.08,ys=[],hl=Math.floor(t*1.2)%7;
+for(i=0;i<6;i++){ys.push(y+i*g);y+=P[i][1]*u}
+var ey=ys[4]+4*u+g*.8;
+function R(px,py,w,h,c){x.fillStyle=c;x.fillRect(px,py,w,h)}
+for(i=0;i<6;i++){var h=P[i][1]*u,w=bw*P[i][2];
+if(i===4){R(cx-w/2,ys[i],bw*.12,h,P[i][3]);R(cx+w/2-bw*.12,ys[i],bw*.12,h,P[i][3])}else R(cx-w/2,ys[i],w,h,P[i][3]);
+if(i===1)R(cx-bw*.15,ys[i]+h-8*u,bw*.3,8*u,'#0a0e10');
+if(i===2)R(cx-bw*.1,ys[i]-6*u,bw*.2,6*u,'#9fb0b8')}
+R(cx-bw*.035,ys[1]-5*u,bw*.07,15*u,'#aab8be');
+R(cx-bw*.25,ey,bw*.5,8*u,'#566871');
+x.strokeStyle='#c9d3d6';x.lineWidth=1.5;x.beginPath();[-.13,.13].forEach(function(d){x.moveTo(cx+bw*d,ey);x.lineTo(cx+bw*d,ys[2]+18*u)});x.stroke();
+x.font=FONT;
+if(e>.5){var hy=hl===6?ey:ys[hl],hh=hl===6?8*u:P[hl][1]*u,hw=hl===6?bw*.5:bw*P[hl][2];x.strokeStyle='#e3b04b';x.lineWidth=1.5;x.strokeRect(cx-hw/2-2,hy-2,hw+4,hh+4);x.fillStyle='#e3b04b';x.fillText(nm[hl],cx+bw/2+10,hy+hh/2+4);L(nm[hl])}
+else if(e<.02){x.strokeStyle='#86b4c4';x.lineWidth=1.5;x.strokeRect(cx-bw/2-3,ys[0]-3,bw+6,ys[5]+8*u-ys[0]+6);x.fillStyle='#86b4c4';x.fillText('Ready for trial shot',cx+bw/2+10,H/2);L('Assembled')}
+else L('Assembling');
+x.fillStyle='#9aa5aa';x.fillText('Schematic, parts simplified',16,H-8)};
+window.msl2=function(x,W,H,t,L){
+var T=t%10,u=H/170,cx=W*.42,fl=H*.86,R=W*.2,ph=Math.floor(T/2),i,rot=t*4;
+var nm=['Omnidirectional camera','On-board computer','Battery and drivers','Omni wheels','Kicker'];
+L(nm[ph]);
+x.fillStyle='#26323a';for(i=0;i<14;i++){x.fillRect(((i*W/12-t*40)%W+W)%W,fl+4,10,2)}
+x.strokeStyle='#3a4953';x.lineWidth=1;x.beginPath();x.moveTo(0,fl);x.lineTo(W,fl);x.stroke();
+function wh(wx){var r=12*u,wy=134*u,j;x.strokeStyle='#8fa0a6';x.lineWidth=3;x.beginPath();x.arc(wx,wy,r,0,6.3);x.stroke();x.fillStyle='#c9d3d6';for(j=0;j<6;j++){x.beginPath();x.arc(wx+Math.cos(rot+j*1.047)*r,wy+Math.sin(rot+j*1.047)*r,2.4*u,0,6.3);x.fill()}x.fillStyle='#8fa0a6';x.beginPath();x.arc(wx,wy,3*u,0,6.3);x.fill()}
+wh(cx-R*.5);wh(cx+R*.5);
+function B(px,py,w,h,c){x.fillStyle=c;x.fillRect(px,py,w,h)}
+B(cx-R*.6,114*u,R*1.2,14*u,'#33424a');B(cx-R/2,96*u,R,18*u,'#3b4c55');B(cx-R/2,70*u,R,24*u,'#46606b');
+x.fillStyle='#86b4c4';for(i=0;i<4;i++)x.fillRect(cx-R/2+6+i*R/4.6,76*u,R/7,3*u);
+B(cx-3*u,34*u,6*u,36*u,'#8fa0a6');B(cx-8*u,26*u,16*u,8*u,'#2a363d');
+x.fillStyle='rgba(201,211,214,.55)';x.beginPath();x.arc(cx,26*u,12*u,Math.PI,0);x.fill();
+var kx=T<8.4?0:T<8.7?14*u*K((T-8.4)/.15):14*u*(1-K((T-8.7)/1)),br=R*.22,bx0=cx+R*.6+30*u+br,bx=T<8.5?bx0:bx0+(T-8.5)*W*.3;
+B(cx+R*.6+kx,118*u,8*u,20*u,'#c9d3d6');
+x.fillStyle='#e8883a';x.beginPath();x.arc(bx,fl-br,br,0,6.3);x.fill();
+var Hs=[[cx-15*u,8*u,30*u,30*u],[cx-R/2-3,68*u,R+6,28*u],[cx-R/2-3,94*u,R+6,22*u],[cx-R*.5-14*u,120*u,28*u,28*u],[cx+R*.6-2,114*u,30*u,26*u]],hs=Hs[ph];
+x.strokeStyle='#e3b04b';x.lineWidth=1.5;x.strokeRect(hs[0],hs[1],hs[2],hs[3]);
+if(ph===3)x.strokeRect(cx+R*.5-14*u,120*u,28*u,28*u);
+if(ph===0){x.setLineDash([4,4]);x.globalAlpha=.6;for(i=0;i<5;i++){x.beginPath();x.moveTo(cx,22*u);x.lineTo(cx+(i-2)*W*.15+Math.sin(t*2)*6,fl);x.stroke()}x.setLineDash([]);x.globalAlpha=1}
+x.font=FONT;x.fillStyle='#9aa5aa';x.fillText('Schematic. League limit: 80 cm, 52 cm, 40 kg',12,H-8)};
+window.mgmt=function(x,W,H,t,L){
+var S=['Order','Plan','Tooling','Molding','Quality','Delivery'],m=16,sw=(W-2*m)/6,i,j,tk=[],pos;
+x.font=FONT;x.fillStyle='#141b1e';x.strokeStyle='#3a4953';x.lineWidth=1;x.fillRect(m,8,W-2*m,20);x.strokeRect(m,8,W-2*m,20);x.fillStyle='#e9e6df';x.fillText('Management: customers, planning, people',m+8,22);
+for(j=0;j<3;j++){pos=(t*.55+j*2.3)%7-.5;tk.push(pos)}
+L(S[Math.max(0,Math.min(5,Math.round(tk[0])))]);
+x.strokeStyle='#26323a';x.beginPath();x.moveTo(m,92);x.lineTo(W-m,92);x.stroke();
+x.font='10px IBM Plex Sans,system-ui,sans-serif';x.textAlign='center';
+for(i=0;i<6;i++){var act=tk.some(function(p){return Math.abs(p-i)<.5}),bx=m+i*sw;x.strokeStyle='#26323a';x.beginPath();x.moveTo(bx+(sw-6)/2,28);x.lineTo(bx+(sw-6)/2,44);x.stroke();x.fillStyle=act?'#1f2a2f':'#141b1e';x.strokeStyle=act?'#e3b04b':'#3a4953';x.fillRect(bx,44,sw-6,34);x.strokeRect(bx,44,sw-6,34);x.fillStyle=act?'#e9e6df':'#9aa5aa';x.fillText(S[i],bx+(sw-6)/2,65)}
+x.textAlign='left';
+var tx=tk.map(function(p){return m+p*sw+sw/2-3});
+for(i=0;i<30;i++){var px=m+((i%15)+.5)*(W-2*m)/15,a=0;tx.forEach(function(q){a=Math.max(a,Math.exp(-Math.pow((px-q)/(sw*.9),2)))});x.globalAlpha=.25+.75*a;x.fillStyle='#e3b04b';x.beginPath();x.arc(px,i<15?116:130,4,0,6.3);x.fill()}
+x.globalAlpha=1;x.fillStyle='#e3b04b';tx.forEach(function(q){x.beginPath();x.arc(q,92,5,0,6.3);x.fill()});
+x.font=FONT;x.fillStyle='#9aa5aa';x.fillText('30 people across molding, machines, molds',m,H-8)};
+window.cnc=function(x,W,H,t,L){
+var C=['G21 G90','G0 X0 Y0','G1 X60 Y0 F400','G1 X60 Y40','G1 X0 Y40','G1 X0 Y0','G0 X15 Y10','G1 X45 Y10','G1 X45 Y30','G1 X15 Y30','G1 X15 Y10','M30'],Q=[[0,0],[0,0],[60,0],[60,40],[0,40],[0,0],[15,10],[45,10],[45,30],[15,30],[15,10],[15,10]];
+var T=t%13,li=Math.min(11,Math.floor(T)),f=T<12?T%1:1,i,pw=W*.4,lh=Math.min(14,(H-16)/12);
+x.fillStyle='#141b1e';x.fillRect(0,0,pw,H);x.font='11px ui-monospace,Menlo,Consolas,monospace';
+for(i=0;i<12;i++){if(i===li){x.fillStyle='rgba(227,176,75,.2)';x.fillRect(0,8+i*lh,pw,lh)}x.fillStyle=i===li?'#e3b04b':'#9aa5aa';x.fillText(C[i],8,8+i*lh+lh-4)}
+var ax=pw+24,aw=W-ax-12,s=Math.min(aw/60,(H-56)/40),oy=H-30;
+function X(v){return ax+v*s}function Y(v){return oy-v*s}
+x.strokeStyle='#3a4953';x.lineWidth=1;x.setLineDash([3,3]);x.strokeRect(ax,Y(40),60*s,40*s);
+for(i=1;i<=li;i++){var a=Q[i-1],b=i===li?[a[0]+(Q[i][0]-a[0])*f,a[1]+(Q[i][1]-a[1])*f]:Q[i],rp=C[i].indexOf('G0')===0;x.strokeStyle=rp?'#86b4c4':'#e3b04b';x.lineWidth=rp?1:2;x.setLineDash(rp?[4,4]:[]);x.beginPath();x.moveTo(X(a[0]),Y(a[1]));x.lineTo(X(b[0]),Y(b[1]));x.stroke()}
+x.setLineDash([]);
+var p=li>0?[Q[li-1][0]+(Q[li][0]-Q[li-1][0])*f,Q[li-1][1]+(Q[li][1]-Q[li-1][1])*f]:Q[0];
+x.fillStyle='#e3b04b';x.beginPath();x.arc(X(p[0]),Y(p[1]),4,0,6.3);x.fill();x.strokeStyle='#e9e6df';x.lineWidth=1;x.beginPath();x.arc(X(p[0]),Y(p[1]),8,0,6.3);x.stroke();
+x.font=FONT;x.fillStyle='#9aa5aa';x.fillText('Toolpath preview',ax,16);x.fillStyle='#c9d3d6';x.fillText('X '+p[0].toFixed(1)+'  Y '+p[1].toFixed(1)+' mm',ax,H-8);
+L(li<11?'line '+(li+1)+' of 12':'program complete')};
+</script>
+<script>
+(function(){
+var tabs=[].slice.call(document.querySelectorAll('[role=tab]'));
+function show(i){tabs.forEach(function(t,j){var on=i===j;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;document.getElementById('p'+j).hidden=!on})}
+tabs.forEach(function(t,i){t.addEventListener('click',function(){show(i)});t.addEventListener('keydown',function(e){var n=e.key==='ArrowRight'?i+1:e.key==='ArrowLeft'?i-1:null;if(n===null)return;n=(n+4)%4;show(n);tabs[n].focus()})});
+
+var c=document.getElementById('wire'),x=c.getContext('2d'),log=document.getElementById('log'),W,H,dpr,specks=[],t0=0,reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function size(){dpr=window.devicePixelRatio||1;W=c.clientWidth;H=c.clientHeight;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0)}
+size();addEventListener('resize',size);
+function mk(px){specks.push({x:px,y:(Math.random()-.5)*3,r:1.6+Math.random()*1.8,hit:false})}
+for(var i=0;i<4;i++)mk(W*(.2+i*.28));
+function wy(px,t){return H/2+Math.sin(px/90+t*.8)*7}
+function draw(t){
+x.clearRect(0,0,W,H);
+var wx0=W*.52,ww=Math.min(150,W*.3);
+x.strokeStyle='#26323a';x.lineWidth=1;
+for(var g=0;g<W;g+=40){x.beginPath();x.moveTo(g,0);x.lineTo(g,H);x.stroke()}
+x.strokeStyle='#8fa0a6';x.lineWidth=5;x.lineCap='round';x.beginPath();
+for(var px=0;px<=W;px+=6){var y=wy(px,t);px?x.lineTo(px,y):x.moveTo(px,y)}x.stroke();
+x.strokeStyle='#c9d3d6';x.lineWidth=1;x.beginPath();
+for(px=0;px<=W;px+=6){y=wy(px,t)-1.5;px?x.lineTo(px,y):x.moveTo(px,y)}x.stroke();
+specks.forEach(function(s){
+var sy=wy(s.x,t)+s.y;x.fillStyle='#050708';x.beginPath();x.arc(s.x,sy,s.r,0,6.3);x.fill();
+var inside=s.x>wx0&&s.x<wx0+ww;
+if(inside){x.strokeStyle='#e3b04b';x.lineWidth=1.5;x.strokeRect(s.x-12,sy-12,24,24);
+if(!s.hit){s.hit=true;var sec=(t%600);log.textContent='t = '+String(Math.floor(sec/60)).padStart(2,'0')+':'+(sec%60).toFixed(1).padStart(4,'0')+' (candidate)'}}
+});
+x.strokeStyle='#86b4c4';x.lineWidth=1.5;x.setLineDash([5,5]);x.strokeRect(wx0,14,ww,H-28);x.setLineDash([]);
+}
+function frame(ts){var t=ts/1000;var dt=t-t0;t0=t;
+specks.forEach(function(s){s.x-=60*dt});
+specks=specks.filter(function(s){return s.x>-20});
+if(specks.length<5&&(!specks.length||specks[specks.length-1].x<W-140))mk(W+20+Math.random()*180);
+draw(t);requestAnimationFrame(frame)}
+if(reduce){specks.forEach(function(s,i){s.x=W*(.2+i*.25)});specks[2].x=W*.52+50;draw(1);log.textContent='t = 00:04.2 (candidate)'}
+else{t0=performance.now()/1000;requestAnimationFrame(frame)}
+})();
+(function(){
+var c=document.getElementById('mold'),x=c.getContext('2d'),st=document.getElementById('stage'),W=0,H=0,last=-1,reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var sl=document.getElementById('slides'),dots=[].slice.call(document.querySelectorAll('.dots i'));
+function go(d){sl.scrollBy({left:d*sl.clientWidth,behavior:reduce?'auto':'smooth'})}
+document.getElementById('prev').onclick=function(){go(-1)};document.getElementById('next').onclick=function(){go(1)};
+function upd(){var i=Math.round(sl.scrollLeft/sl.clientWidth);dots.forEach(function(d,j){d.classList.toggle('on',j===i)})}
+sl.addEventListener('scroll',upd);
+sl.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){go(1);e.preventDefault()}if(e.key==='ArrowLeft'){go(-1);e.preventDefault()}});
+function size(){var d=window.devicePixelRatio||1;W=c.clientWidth;H=c.clientHeight;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0)}
+size();
+var names=['Feeding pellets','Melting plastic','Injecting into mold','Cooling','Opening mold','Ejecting and inspecting'];
+function k(v){return Math.max(0,Math.min(1,v))}
+function box(px,py,w,h,f,s){x.fillStyle=f;x.fillRect(px,py,w,h);if(s){x.strokeStyle=s;x.lineWidth=1.5;x.strokeRect(px,py,w,h)}}
+function mix(a){var A=[232,136,58],B=[134,180,196];return 'rgb('+A.map(function(v,i){return Math.round(v+(B[i]-v)*a)}).join()+')'}
+function draw(ts){
+var t=ts%12,bad=Math.floor(ts/12)%2===1,ph=t<2?0:t<4?1:t<6?2:t<8?3:t<9?4:5;
+if(ph!==last){last=ph;st.textContent=names[ph]+(ph===5?(bad?': short shot flagged':': part OK'):'')}
+x.clearRect(0,0,W,H);
+var cy=H*.52,b0=W*.05,b1=W*.5,bh=36,mx=W*.58,bw=W*.115,seam=mx+bw,cav=W*.09,line='#3a4953',dark='#1b252a',melt='#e8883a';
+var open=t<8?0:t<9?k(t-8)*W*.1:t<11.5?W*.1:(1-k((t-11.5)*2))*W*.1;
+var hx=b0+W*.07,hw=W*.1,top=cy-bh/2;
+x.fillStyle=dark;x.strokeStyle=line;x.lineWidth=1.5;x.beginPath();x.moveTo(hx-8,top-44);x.lineTo(hx+hw+8,top-44);x.lineTo(hx+hw,top);x.lineTo(hx,top);x.closePath();x.fill();x.stroke();
+x.fillStyle='#e9e6df';
+for(var i=0;i<9;i++){var py=ph===0?top-40+((ts*30+i*13)%40):top-8-(i%3)*6;x.beginPath();x.arc(hx+4+(i*9)%(hw-6),py,2,0,6.3);x.fill()}
+box(b0,top,b1-b0,bh,dark,line);
+var m=ph===0?.25*(1-k(t/2)):ph===1?.25+.75*k((t-2)/2):ph===2?1-.75*k((t-4)/2):.25;
+x.globalAlpha=.85;x.fillStyle=melt;x.fillRect(b1-(b1-b0-6)*m-3,top+4,(b1-b0-6)*m,bh-8);x.globalAlpha=1;
+var off=ph===1?24*k((t-2)/2):ph===2?24*(1-k((t-4)/2)):0,tip=b1-14-off;
+x.strokeStyle='#c9d3d6';x.lineWidth=1.5;var sh=ph===1?(ts*40)%10:0;
+for(var s=b0+sh;s<tip;s+=10){x.beginPath();x.moveTo(s,top+4);x.lineTo(s+6,top+bh-4);x.stroke()}
+box(b0-6,cy-4,tip-b0+6,8,'#8fa0a6');
+box(b1,cy-5,mx-b1,10,dark,line);
+box(mx,cy-48,bw,96,dark,line);box(seam+open,cy-48,bw,96,dark,line);
+if(ph===2){x.fillStyle=melt;x.fillRect(b1,cy-3,seam-b1,6)}
+box(seam+open,cy-22,cav,44,'#0a0e10');
+var f=ph<2?0:ph===2?k((t-4)/2):1;if(bad)f*=.8;
+var col=ph<=2?melt:ph===3?mix(k((t-6)/2)):'#86b4c4';
+var gone=ph===5&&t>=11.5,dy=ph===5&&t>9.5?k((t-9.5)/1.5)*H*.5:0;
+if(f>0&&!gone)box(seam+open,cy-22+dy,cav*f,44,col);
+x.font='12px IBM Plex Sans,system-ui,sans-serif';x.fillStyle='#9aa5aa';
+x.fillText('hopper',hx-4,16);x.fillText('screw',b0,cy+bh/2+18);x.fillText('mold',mx,cy+66);
+if(ph===5&&!gone){var cc=bad?'#e3b04b':'#86b4c4';x.strokeStyle=cc;x.lineWidth=1.5;x.strokeRect(seam+open-6,cy-28+dy,cav+12,56);x.fillStyle=cc;x.fillText(bad?'short shot':'OK',seam+open-6,cy-34+dy)}
+}
+addEventListener('resize',function(){size();upd();if(reduce)full(10.2)});
+upd();
+function pro(ts){
+var t=ts%12,ph=t<2?0:t<4?1:t<6?2:t<8?3:t<9?4:5,cy=H*.52,b0=W*.05,b1=W*.5,bh=36,mx=W*.58,bw=W*.115,seam=mx+bw,open=t<8?0:t<9?k(t-8)*W*.1:t<11.5?W*.1:(1-k((t-11.5)*2))*W*.1,rx=seam+W*.1+bw+W*.025;
+x.fillStyle=ph===1||ph===2?'#d0762e':'#5a4a40';
+[.3,.5,.7,.9].forEach(function(p){x.fillRect(b0+(b1-b0)*p-5,cy-bh/2-3,10,bh+6)});
+x.strokeStyle='#7d8c94';x.lineWidth=3;x.beginPath();x.moveTo(mx-8,cy-54);x.lineTo(rx,cy-54);x.moveTo(mx-8,cy+54);x.lineTo(rx,cy+54);x.stroke();
+x.fillStyle='#2a363d';x.fillRect(mx-8,cy-60,8,120);x.fillRect(rx,cy-60,8,120);
+var pl=seam+open+bw;x.fillRect(pl,cy-60,8,120);x.fillStyle='#8fa0a6';x.fillRect(pl+8,cy-5,rx-pl-8,10);
+var pr=ph===2?Math.round(900*Math.sin(k((t-4)/2)*1.57)):ph===3?Math.round(450*(1-k((t-6)/2))):0,me=ph===0?200:ph===1?Math.round(200+30*k((t-2)/2)):230;
+x.font='11px IBM Plex Sans,system-ui,sans-serif';x.textAlign='right';x.fillStyle='#c9d3d6';x.fillText('Melt '+me+' °C   Pressure '+pr+' bar',W-8,14);x.textAlign='left';
+x.fillStyle='#26323a';x.fillRect(0,H-4,W,4);x.fillStyle='#e3b04b';x.fillRect(0,H-4,W*t/12,4);
+[2,4,6,8,9].forEach(function(s){x.fillStyle='#0d1214';x.fillRect(W*s/12-.5,H-4,1,4)});
+}
+function full(ts){draw(ts);pro(ts)}
+if(reduce)full(10.2);else(function loop(n){full(n/1000);requestAnimationFrame(loop)})(performance.now());
+})();
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches,items=[],A=0;
+function k(v){return Math.max(0,Math.min(1,v))}
+function reg(id,out,st,fn){var c=document.getElementById(id),it={c:c,x:c.getContext('2d'),o:document.getElementById(out),fn:fn,st:st,last:''};function sz(){var d=devicePixelRatio||1;it.W=c.clientWidth;it.H=c.clientHeight;c.width=it.W*d;c.height=it.H*d;it.x.setTransform(d,0,0,d,0,0)}sz();addEventListener('resize',function(){sz();if(reduce)run(it,it.st)});items.push(it)}
+function run(it,t){it.x.clearRect(0,0,it.W,it.H);it.fn(it.x,it.W,it.H,t,function(s){if(it.last!==s){it.last=s;it.o.textContent=s}})}
+function seed(s,d,v){var a=[100],r=s;for(var i=1;i<70;i++){r=(r*16807)%2147483647;a.push(a[i-1]*(1+d+(r/2147483647-.5)*v))}return a}
+var D=[seed(7,.0012,.02),seed(21,.0008,.012)],V=[.02,.012];
+document.getElementById('asset').onclick=function(){A=1-A;this.textContent=['Gold','Dow Jones'][A]};
+reg('fc','fcs',9,function(x,W,H,t,L){
+var s=D[A],n=70,T=t%10,mn=Math.min.apply(0,s)-3,mv=Math.max.apply(0,s)+16,fx=W*.7,col=A?'#86b4c4':'#e3b04b',i;
+function X(i){return 20+(fx-20)*i/(n-1)}function Y(v){return H-28-(v-mn)/(mv-mn)*(H-52)}
+x.strokeStyle='#26323a';x.lineWidth=1;for(i=1;i<5;i++){x.beginPath();x.moveTo(0,H*i/5);x.lineTo(W,H*i/5);x.stroke()}
+var cnt=Math.floor(n*k(T/4));x.strokeStyle=col;x.lineWidth=2;x.beginPath();for(i=0;i<cnt;i++){i?x.lineTo(X(i),Y(s[i])):x.moveTo(X(i),Y(s[i]))}x.stroke();
+L(T<4?'learning from history':T<7?'forecasting 20 days':'80% interval');
+if(T>=4){var fk=k((T-4)/3),jm=Math.floor(20*fk),last=s[n-1],dr=(last/s[n-30]-1)/29,ex=W-24,j,u=[],l=[];
+for(j=0;j<=jm;j++){var m=last*(1+dr*j),sg=last*V[A]*Math.sqrt(j)*1.28,px=fx+(ex-fx)*j/20;u.push([px,Y(m+sg)]);l.push([px,Y(m-sg)])}
+x.fillStyle=col;x.globalAlpha=.18;x.beginPath();u.forEach(function(p,q){q?x.lineTo(p[0],p[1]):x.moveTo(p[0],p[1])});l.slice().reverse().forEach(function(p){x.lineTo(p[0],p[1])});x.fill();x.globalAlpha=1;
+x.setLineDash([5,5]);x.strokeStyle=col;x.beginPath();for(j=0;j<=jm;j++){var pm=last*(1+dr*j);j?x.lineTo(fx+(ex-fx)*j/20,Y(pm)):x.moveTo(fx,Y(pm))}x.stroke();
+x.strokeStyle='#9aa5aa';x.lineWidth=1;x.beginPath();x.moveTo(fx,12);x.lineTo(fx,H-26);x.stroke();x.setLineDash([])}
+x.font='11px IBM Plex Sans,system-ui,sans-serif';x.fillStyle='#9aa5aa';x.fillText('Synthetic data. Shows the method, not market advice.',16,H-8)});
+reg('mm','mms',8,function(x,W,H,t,L){return window.mm2(x,W,H,t,L);
+var T=t%12,ph=T<2?0:T<5?1:T<7?2:T<9?3:4,bx=W*.28,bw=W*.44,by=H*.38,bh=H*.42,cw=bw*.5,cx=bx+(bw-cw)/2,cd=bh*.7;
+L(['CAD design','Rough milling','EDM and finishing','Polishing','Trial shot (T1)'][ph]);
+x.fillStyle='#1b252a';x.strokeStyle='#3a4953';x.lineWidth=1.5;x.fillRect(bx,by,bw,bh);x.strokeRect(bx,by,bw,bh);
+var dp=ph===0?0:ph===1?cd*.8*k((T-2)/3):cd*(ph===2?.8+.2*k((T-5)/2):1);
+if(dp>0){x.fillStyle='#0a0e10';x.fillRect(cx,by,cw,dp)}
+if(ph===0){x.strokeStyle='#86b4c4';x.setLineDash([4,4]);x.strokeRect(cx,by,cw,cd);x.setLineDash([])}
+var tx=cx+cw*(.5+.4*Math.sin(T*6)),i;
+if(ph===1){x.fillStyle='#8fa0a6';x.fillRect(tx-3,by-34,6,34+dp);x.fillStyle='#c9d3d6';for(i=0;i<6;i++){x.fillRect(tx+((T*50+i*17)%30)-15,by+dp-((T*40+i*9)%20),2,2)}}
+if(ph===2){x.fillStyle='#8fa0a6';x.fillRect(cx+cw*.3,by-34,cw*.4,34+dp-4);x.strokeStyle='#e3b04b';x.lineWidth=1.5;for(i=0;i<5;i++){var sx=cx+cw*(.3+.4*((Math.sin(T*9+i*2)+1)/2));x.beginPath();x.moveTo(sx,by+dp);x.lineTo(sx+Math.cos(i*3)*6,by+dp-5-i%3*2);x.stroke()}}
+if(ph===3){var g=cx+(cw-6)*k((T-7)/2);x.fillStyle='rgba(255,255,255,.4)';x.fillRect(g,by,6,dp)}
+if(ph===4){var f=k((T-9)/1.2);x.fillStyle=T<10.4?'#e8883a':'#86b4c4';x.fillRect(cx+2,by+dp-(dp-2)*f,cw-4,(dp-2)*f);if(T>10.6){x.fillStyle='#e3b04b';x.font='12px IBM Plex Sans,system-ui,sans-serif';x.fillText('T1 OK',bx+bw+8,by+bh/2)}}
+x.font='11px IBM Plex Sans,system-ui,sans-serif';x.fillStyle='#9aa5aa';x.fillText('Illustration of the workflow',16,H-8)});
+reg('ms','mss',2,function(x,W,H,t,L){return window.msl2(x,W,H,t,L);
+var fw=W*.9,fh=H*.84,f0=W*.05,g0=H*.08,cy=g0+fh/2,i;
+x.fillStyle='#10201e';x.fillRect(f0,g0,fw,fh);x.strokeStyle='#9aa5aa';x.lineWidth=1;x.strokeRect(f0,g0,fw,fh);
+x.beginPath();x.moveTo(f0+fw/2,g0);x.lineTo(f0+fw/2,g0+fh);x.stroke();x.beginPath();x.arc(f0+fw/2,cy,fh*.18,0,6.3);x.stroke();
+x.strokeRect(f0,cy-fh*.22,fw*.1,fh*.44);x.strokeRect(f0+fw*.9,cy-fh*.22,fw*.1,fh*.44);
+x.strokeStyle='#e3b04b';x.lineWidth=2;x.strokeRect(f0+fw,cy-fh*.1,5,fh*.2);
+var PA=[[.18,.5],[.4,.26],[.42,.74],[.66,.38],[.76,.62]],PB=[[.9,.5],[.7,.3],[.68,.72],[.52,.5],[.34,.4]];
+function P(b,j){return[f0+fw*(b[0]+.015*Math.sin(t*1.1+j*2)),g0+fh*(b[1]+.03*Math.cos(t*.9+j))]}
+var A=PA.map(P),B=PB.map(P),T=t%6.4,sq=[0,2,1,3],sg=Math.min(4,Math.floor(T/1.4)),e=k((T-sg*1.4)/1),bp,hp=sg<4?A[sq[sg]]:null;
+var goal=[f0+fw+2,cy];
+if(sg<3){var a=A[sq[sg]],b=A[sq[sg+1]];bp=[a[0]+(b[0]-a[0])*e,a[1]+(b[1]-a[1])*e]}else if(sg===3){var a3=A[3];bp=[a3[0]+(goal[0]-a3[0])*e,a3[1]+(goal[1]-a3[1])*e]}else bp=goal;
+L(sg===4?'Goal':sg===3?'Shot on goal':'Pass '+(sg+1));
+if(hp&&e<.35){x.strokeStyle='#e3b04b';x.lineWidth=1;x.setLineDash([3,3]);x.beginPath();x.arc(hp[0],hp[1],17,0,6.3);x.stroke();x.setLineDash([])}
+A.forEach(function(p){x.fillStyle='#e3b04b';x.beginPath();x.arc(p[0],p[1],7,0,6.3);x.fill()});
+B.forEach(function(p){x.fillStyle='#86b4c4';x.beginPath();x.arc(p[0],p[1],7,0,6.3);x.fill()});
+x.fillStyle='#e8883a';x.beginPath();x.arc(bp[0],bp[1],4,0,6.3);x.fill()});
+reg('mg','mgs',3,window.mgmt);reg('cn','cns',8,window.cnc);
+if(reduce)items.forEach(function(i){run(i,i.st)});else(function lp(n){items.forEach(function(i){run(i,n/1000)});requestAnimationFrame(lp)})(performance.now());
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+var sec=document.getElementById('factory'),host=document.getElementById('f3c'),bar=document.getElementById('f3bar'),cap=document.getElementById('fcap');
+if(!window.THREE){sec.hidden=true;return}
+var TH=THREE,still=matchMedia('(prefers-reduced-motion: reduce)').matches,tr=function(s){return window._tx?window._tx(s):s},rd;
+var P=[{n:'Overview',c:'Five stations, one connected system: data flows up, decisions flow back.',t:[0,1.2,-.5],r:17,th:.7,ph:1.05},
+{n:'CNC machining',c:'Custom G-code drives the machine, and one operator supervises three.',t:[-6,1.3,-1],r:8,th:.6,ph:1.2},
+{n:'Injection moulding',c:'Mould cycles feed production data into the plan.',t:[-3,1.2,-1],r:8,th:.6,ph:1.2},
+{n:'Vision inspection',c:'Cameras check straightness and coating (in development).',t:[0,1.4,0],r:8,th:.5,ph:1.15},
+{n:'AI planner',c:'CP-SAT turns tasks, skills and materials into a schedule (in development).',t:[3,2.5,-2],r:8,th:.4,ph:1.2},
+{n:'Team alerts',c:'The right person is notified in Telegram or Rubika when work is done.',t:[6,1.8,-2],r:8,th:.3,ph:1.2}];
+try{rd=new TH.WebGLRenderer({antialias:true,alpha:true})}catch(e){sec.hidden=true;return}
+var sc=new TH.Scene(),cam=new TH.PerspectiveCamera(40,1,.1,100);
+rd.setPixelRatio(Math.min(devicePixelRatio||1,2));host.appendChild(rd.domElement);
+sc.add(new TH.HemisphereLight(0xcfe3ff,0x16213a,1.1));var dl=new TH.DirectionalLight(0xffffff,.9);dl.position.set(6,10,7);sc.add(dl);
+sc.add(new TH.GridHelper(26,26,0x2a3b57,0x16233a));
+function M(c){return new TH.MeshStandardMaterial({color:c,roughness:.55,metalness:.35})}
+function A(c){return new TH.MeshStandardMaterial({color:c,roughness:.4,metalness:.2,emissive:c,emissiveIntensity:.25})}
+function bx(w,h,d,m,x,y,z){var o=new TH.Mesh(new TH.BoxGeometry(w,h,d),m);o.position.set(x,y,z);sc.add(o);return o}
+function ad(o,x,y,z){o.position.set(x,y,z);sc.add(o);return o}
+var steel=M(0x33465f),dark=M(0x1d2a40),XS=[-6,-3,0,3,6],acc=[A(0xe3b04b),A(0x6f96e0),A(0x5fb3c4),A(0xf0925a),A(0x9b87e6)],act=[0,0,0,0,0],i;
+bx(18,.3,1.6,dark,0,.15,0);bx(18,.08,.12,steel,0,.34,.8);bx(18,.08,.12,steel,0,.34,-.8);
+bx(2.2,2.4,1.6,steel,-6,1.2,-2);bx(.3,.3,1.8,steel,-6,2,-1.1);var spin=ad(new TH.Mesh(new TH.CylinderGeometry(.14,.14,1,16),acc[0]),-6,1.5,-.2);
+bx(2.2,1.8,1.8,steel,-3,.9,-2);var hop=ad(new TH.Mesh(new TH.ConeGeometry(.7,.9,4),acc[1]),-3,2.25,-2);hop.rotation.x=Math.PI;bx(.6,.5,.9,acc[1],-3,.9,-.95);
+bx(.3,2.5,.3,steel,0,1.25,1.2);bx(.3,2.5,.3,steel,0,1.25,-1.2);bx(.3,.3,2.7,steel,0,2.5,0);bx(.5,.4,.5,acc[2],0,2.25,0);
+var beam=ad(new TH.Mesh(new TH.ConeGeometry(.9,1.75,24,1,true),new TH.MeshBasicMaterial({color:0x5fb3c4,transparent:true,opacity:.2,side:TH.DoubleSide,depthWrite:false})),0,1.22,0);
+ad(new TH.Mesh(new TH.CylinderGeometry(.7,.9,.8,24),steel),3,.4,-2);
+var ico=ad(new TH.Mesh(new TH.IcosahedronGeometry(.8,1),new TH.MeshBasicMaterial({color:0xf0925a,wireframe:true})),3,3.2,-2),core=ad(new TH.Mesh(new TH.IcosahedronGeometry(.35,0),acc[3]),3,3.2,-2);
+ad(new TH.Mesh(new TH.CylinderGeometry(.6,.8,.8,24),steel),6,.4,-2);
+var ring=ad(new TH.Mesh(new TH.TorusGeometry(.6,.07,8,40),acc[4]),6,2.2,-2);
+function V(a){return new TH.Vector3(a[0],a[1],a[2])}
+function arc(a,b){var m=V(a).add(V(b)).multiplyScalar(.5);m.y+=1.6;var c=new TH.QuadraticBezierCurve3(V(a),m,V(b));sc.add(new TH.Line(new TH.BufferGeometry().setFromPoints(c.getPoints(30)),new TH.LineBasicMaterial({color:0x3a5a8a})));return c}
+var hub=[3,3.2,-2],cv=[arc([-6,2.9,-2],hub),arc([-3,3,-2],hub),arc([0,2.9,0],hub),arc(hub,[6,2.2,-2])];
+var pu=cv.map(function(){return ad(new TH.Mesh(new TH.SphereGeometry(.13,12,12),new TH.MeshBasicMaterial({color:0xf0925a})),0,0,0)});
+var parts=[],pm=M(0x9fb0c8);for(i=0;i<7;i++)parts.push(bx(.6,.4,.6,pm,-9+i*18/7,.5,0));
+var cur={th:.7,ph:1.05,r:17,t:new TH.Vector3(0,1.2,-.5)},goal={th:.7,ph:1.05,r:17,t:new TH.Vector3(0,1.2,-.5)},sel=0,idle=0,vis=true,last=performance.now(),t=0;
+function go(k){sel=k;var p=P[k];goal.th=p.th;goal.ph=p.ph;goal.r=p.r*(cam.aspect<1?1.45:1);goal.t.set(p.t[0],p.t[1],p.t[2]);cap.textContent=tr(p.c);[].forEach.call(bar.children,function(b,j){b.setAttribute('aria-pressed',String(j===k))});idle=0}
+P.forEach(function(p,k){var b=document.createElement('button');b.type='button';b.textContent=p.n;b.setAttribute('aria-pressed','false');b.onclick=function(){go(k)};bar.appendChild(b)});
+function rs(){var w=host.clientWidth,h=host.clientHeight;if(!w||!h)return;rd.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();go(sel)}
+var dr=null,cv0=rd.domElement;
+cv0.addEventListener('pointerdown',function(e){dr={x:e.clientX,y:e.clientY};cv0.setPointerCapture(e.pointerId);idle=0});
+cv0.addEventListener('pointermove',function(e){if(!dr)return;goal.th-=(e.clientX-dr.x)*.007;if(e.pointerType==='mouse')goal.ph=Math.max(.45,Math.min(1.5,goal.ph-(e.clientY-dr.y)*.005));dr={x:e.clientX,y:e.clientY};cur.th=goal.th;cur.ph=goal.ph;idle=0});
+['pointerup','pointercancel'].forEach(function(n){cv0.addEventListener(n,function(){dr=null})});
+function step(dt){
+  var near=[0,0,0],k,g,ph=t%4;
+  parts.forEach(function(p){p.position.x+=dt*1.5;if(p.position.x>9)p.position.x-=18;for(k=0;k<3;k++)near[k]=Math.max(near[k],Math.max(0,1-Math.abs(p.position.x-XS[k])/1.4))});
+  for(k=0;k<5;k++){var tg=k<3?near[k]:k===3?(ph>1.4&&ph<2.6?1:0):(ph>2.8&&ph<3.8?1:0);act[k]+=(tg-act[k])*.15;acc[k].emissiveIntensity=.25+.9*act[k]}
+  beam.material.opacity=.08+.25*near[2];spin.position.y=1.5+Math.sin(t*10)*.12*near[0];
+  cv.forEach(function(c,j){g=(((t-(j<3?j*.3:1.4))%4)+4)%4/1.4;pu[j].visible=g<=1;if(g<=1)pu[j].position.copy(c.getPoint(g))});
+  ico.rotation.y=t*.6;ico.rotation.x=t*.3;core.scale.setScalar(1+.25*act[3]);ring.rotation.y=t*1.5;ring.scale.setScalar(1+.15*act[4]);
+}
+function frame(now){
+  requestAnimationFrame(frame);if(!vis)return;
+  var dt=Math.min(.05,(now-last)/1000);last=now;if(!still){t+=dt;step(dt);idle+=dt;if(idle>4&&sel===0&&!dr)goal.th+=dt*.12}
+  cur.th+=(goal.th-cur.th)*.07;cur.ph+=(goal.ph-cur.ph)*.07;cur.r+=(goal.r-cur.r)*.07;cur.t.lerp(goal.t,.07);
+  cam.position.set(cur.t.x+cur.r*Math.sin(cur.ph)*Math.sin(cur.th),cur.t.y+cur.r*Math.cos(cur.ph),cur.t.z+cur.r*Math.sin(cur.ph)*Math.cos(cur.th));cam.lookAt(cur.t);rd.render(sc,cam)}
+if('IntersectionObserver' in window)new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(host);
+addEventListener('resize',rs);rs();requestAnimationFrame(frame);
+window.f3r=function(){cap.textContent=tr(P[sel].c)};
+if(window._apply)_apply(_lang());
+})();
+</script>
+</body>
+</html>
